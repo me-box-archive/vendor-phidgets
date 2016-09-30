@@ -9,9 +9,9 @@
 	"license": "MIT",
 
 	"tags": [
-		"driver"
+		"driver",
 		"sensor",
-		"sensors",
+		"sensors"
 	],
 
 	"homepage": "https://github.com/me-box/vender-phidgets",
