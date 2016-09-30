@@ -24,6 +24,8 @@ LABEL databox.type="driver"
 
 EXPOSE 3000
 
-RUN apt-get autoremove -y ca-certificates wget curl build-essential libusb-dev unzip 
+RUN apt-get autoremove -y ca-certificates wget curl build-essential libusb-dev unzip \ 
+  && rm -rf /libphidget* \
+  && rm -rf /PhidgetsPython
 
 CMD ["python","app.py"]
