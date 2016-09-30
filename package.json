@@ -1,0 +1,32 @@
+
+
+{
+  "name": "vender-phidgets",
+  "version": "0.1.0",
+  "description": "The Databox driver for phidgets",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/me-box/vender-phidgets.git"
+  },
+  "keywords": [
+    "databox",
+    "driver",
+    "phidgets",
+    "sensors"
+  ],
+  "author": "Anthony Brown <anthony.brown@nottingham.ac.uk> ()",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/me-box/vender-phidgets/issues"
+  },
+  "homepage": "https://github.com/me-box/vender-phidgets/",
+  "dependencies": {
+    "phidgetapi": "2.3.0"
+  }
+}
+
+
