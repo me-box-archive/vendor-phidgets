@@ -1,12 +1,11 @@
 
 
 {
-  "name": "vender-phidgets",
+  "name": "databox-driver-phidgets",
   "version": "0.1.0",
   "description": "The Databox driver for phidgets",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
   },
   "repository": {
     "type": "git",

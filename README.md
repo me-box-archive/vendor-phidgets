@@ -1,2 +1,2 @@
-# vender-phidgets
+# vendor-phidgets
 Phidgets driver for data box see http://www.phidgets.com/

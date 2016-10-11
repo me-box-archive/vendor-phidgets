@@ -8,6 +8,7 @@
 	"author": "Anthony Brown <Anthony.Brown@nottingham.ac.uk> ()",
 	"license": "MIT",
 
+
 	"tags": [
 		"driver",
 		"sensor",
@@ -22,10 +23,12 @@
 
 	"network-permissions": [
 	],
+	
 	"hardware-permissions": [
 		"usb"
 	],
 
 	"resource-requirements": {
+		"datastore": "datastore-timeseries"
 	}
 }

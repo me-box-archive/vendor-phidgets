@@ -15,17 +15,19 @@ RUN wget -O PhidgetsPython.zip "http://www.phidgets.com/downloads/libraries/Phid
 	&& cd PhidgetsPython \
 	&& python setup.py install
 
-ADD requirements.txt requirements.txt
-RUN pip install -r requirements.txt
-
-ADD . .
+#RUN apt-get autoremove -y ca-certificates wget curl build-essential libusb-dev unzip 
+#\ 
+#  && rm -rf /libphidget* \
+#  && rm -rf /PhidgetsPython
 
 LABEL databox.type="driver"
 
-EXPOSE 3000
+ADD requirements.txt /requirements.txt
+RUN pip install -r /requirements.txt
 
-RUN apt-get autoremove -y ca-certificates wget curl build-essential libusb-dev unzip \ 
-  && rm -rf /libphidget* \
-  && rm -rf /PhidgetsPython
+ADD . .
+
+
+EXPOSE 8080
 
 CMD ["python","app.py"]

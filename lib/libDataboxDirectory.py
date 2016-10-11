@@ -1,9 +1,9 @@
 import requests
 import json
+import os
 import os.path
 
-databox_directory_url = "http://172.17.0.3:3000/api"
-#databox_directory_url = "http://databox_directory:8080/api"
+databox_directory_url = os.environ['DATABOX_DIRECTORY_ENDPOINT']
 
 def register_driver(hostname, description, vendor_id):
 	options = {
@@ -17,6 +17,7 @@ def register_driver(hostname, description, vendor_id):
 
 def register_vendor(description):
 	options = {"description": description}
+	print databox_directory_url
 	url = databox_directory_url +'/vendor/register'
 	r = requests.post(url, data=options)
 	return json.loads(r.content)
@@ -83,5 +84,6 @@ def get_my_registered_sensors(vendor_id):
 def get_datastore_id(hostname):
 	options = {"hostname": hostname}
 	url = databox_directory_url+'/datastore/get_id'
-	r = requests.get(url)
+	r = requests.post(url, data=options)
+	print r
 	return json.loads(r.content)
