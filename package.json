@@ -6,6 +6,16 @@
   "description": "The Databox driver for phidgets",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "docker build -t databox/databox-driver-phidgets .",
+    "deploy": "docker tag databox/databox-driver-phidgets registry.upintheclouds.org/databox-driver-phidgets && docker push registry.upintheclouds.org/databox-driver-phidgets",
+    "build-arm": "docker build -f Dockerfile-arm -t databox/databox-driver-phidgets-arm .",
+    "deploy-arm": "docker tag databox/databox-driver-phidgets-arm registry.upintheclouds.org/databox-driver-phidgets-arm && docker push registry.upintheclouds.org/databox-driver-phidgets-arm",
+    "clean": "node ./node_modules/modclean/bin/modclean.js -p ./node_modules/ -r",
+    "getshell": "docker exec -i -t databox-driver-phidgets /bin/bash",
+    "kill": "docker kill databox-driver-phidgets",
+    "attach": "docker attach databox-driver-phidgets",
+    "shell": "docker run -i -t databox/databox-driver-phidgets /bin/bash",
+    "local": "docker run -i -t databox/databox-driver-phidgets"
   },
   "repository": {
     "type": "git",

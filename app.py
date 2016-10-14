@@ -44,11 +44,11 @@ def valToHumidity(val):
     return ((val/1000) * 190.6) - 40.2
 
 def valToLuminosity(val):
-    return math.exp( (0.02356 * val) - 0.3762)
+    return val
 
 sensors = [
     {'sensor_type':"temp", 'unit': "Celsius", 'short_unit':"C", 'sensor_type_id':None, 'sensor_id': None, 'conversion': valueToTemp, 'description':"Phidgets sensor", 'location':'Unknown'},
-    {'sensor_type':"humidity", 'unit': "percent", 'short_unit':"%", 'sensor_type_id':None, 'sensor_id': None, 'conversion': valueToMovement, 'description':"Phidgets sensor", 'location':'Unknown'},
+    {'sensor_type':"humidity", 'unit': "percent", 'short_unit':"", 'sensor_type_id':None, 'sensor_id': None, 'conversion': valueToMovement, 'description':"Phidgets sensor", 'location':'Unknown'},
     {'sensor_type':"luminosity", 'unit': "", 'short_unit':"lux", 'sensor_type_id':None, 'sensor_id': None, 'conversion': valToHumidity, 'description':"Phidgets sensor", 'location':'Unknown'},
     {'sensor_type':"movement", 'unit': "", 'short_unit':"", 'sensor_type_id':None, 'sensor_id': None, 'conversion': valToLuminosity, 'description':"Phidgets sensor", 'location':'Unknown'},
 ]
@@ -100,7 +100,7 @@ while not sensorsRegisted:
                 sensors[i]['sensor_id'] = ret['id']
             else:
                 print ret
-                raise Exception('register_sensor fial')
+                raise Exception('register_sensor fail')
             
             sensorsRegisted = True
     except Exception as e:
