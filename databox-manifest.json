@@ -7,6 +7,8 @@
 	"description": "A Databox driver that provides access to the phidgets sensingkit",
 	"author": "Anthony Brown <Anthony.Brown@nottingham.ac.uk> ()",
 	"license": "MIT",
+	
+	"databox-type":"driver",
 
 
 	"tags": [
